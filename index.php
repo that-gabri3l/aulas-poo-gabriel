@@ -20,9 +20,11 @@ $filme3->titulo = "O Auto da Compadecida";
 $filme3->ano = 2000;
 $filme3 ->genero = "Comedia";
 
-echo "<pre>";
-var_dump($filme1, $filme2, $filme3);
-echo "</pre>";
+//echo "<pre>";
+//var_dump($filme1, $filme2, $filme3);
+//echo "</pre>";
+
+$filmes =[$filme1, $filme2, $filme3];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,9 +46,13 @@ echo "</pre>";
 
         <div class="filmes">
 
-            <article>
-
+            <?php foreach($filmes as $filme): ?>
+            <article class="card-filme">
+                <span class="genero"><?= $filme->genero ?></span>
+                <h2><?= $filme->titulo ?></h2>
+                <p class="ano">Lançamento: <?= $filme->ano ?></p>
             </article>
+            <?php endforeach ?>
 
         </div>
 
