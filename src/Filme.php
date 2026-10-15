@@ -1,14 +1,14 @@
-<?
-//src/Filme.php
+<?php
+// src/Filme.php
 
 class Filme
 {
-    //Propriedades: caracteristicas
+    // Propriedades: características
     public string $titulo;
     public string $genero;
     public int $ano;
 
-    //Métodos: comportamentos (funções)
+    // Métodos: comportamentos (funções)
     public function ehClassico()
     {
 

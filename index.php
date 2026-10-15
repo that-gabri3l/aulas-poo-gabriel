@@ -1,13 +1,24 @@
-<?php
-//importando a classe
+<?php 
+// Importando a classe
 require_once "src/Filme.php";
 
-//Criando um OBJETO ou uma INSTÃNCIA a partir da classe Filme
+// Criando um OBJETO ou uma INSTÂNCIA a partir da classe Filme
 $filme1 = new Filme();
 
+//Atribuir valores as propriedades do objeto
+$filme1->titulo = "De volta para o Futuro";
+$filme1->ano = 1984;
+$filme1->genero = "Ficção Cientifica";
+
 $filme2 = new Filme();
+$filme2->titulo = "Toy Story";
+$filme2->ano = 1995;
+$filme2->genero = "Animação";
 
 $filme3 = new Filme();
+$filme3->titulo = "O Auto da Compadecida";
+$filme3->ano = 2000;
+$filme3 ->genero = "Comedia";
 
 echo "<pre>";
 var_dump($filme1, $filme2, $filme3);
