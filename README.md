@@ -8,6 +8,10 @@ Os assunsto e exemplos estão divididos por `branches`, acessiveis pelo menu de 
 
 ## Branch 02: Visibilidade e Encapsulamento
 
+- Visibilidade de propriedade: public e private
+- Encapsulamento
+- Métodos Getters para Leitura
+- Métodos Setters para escrita
 ---
 
 
