@@ -5,7 +5,9 @@ require_once "src/Filme.php";
 //Criando os objetos e passando os dados para o construtor
 $filme1 = new Filme('De volta para o Futuro', 'Ficçao', 1985);
 $filme2 = new Filme('Toy Story', 'Animação', 1995);
-$filme3 = new Filme('Homen Aranha', 'Ação', 2026);
+$filme3 = new Filme('Homen Aranha', 'Ação', 0);
+
+
 
 
 //echo "<pre>";

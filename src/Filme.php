@@ -15,7 +15,10 @@ class Filme
         // Atribuindo os valores recebidos pelos parâmetros às propriedades
         $this->titulo = $titulo;
         $this->genero = $genero;
-        $this->ano = $ano;
+        //$this->ano = $ano;
+
+        //Dica: podemos (ou, dependendo do caso, devemos) usar os setters atraves do construtor
+        $this->setAno($ano);
     }
 
     public function ehClassico(): bool
@@ -54,4 +57,9 @@ class Filme
             $this->ano = $ano;
         }
     }
+
+
+//arquivo de funções (src/fornecedor_crud.php)
+//CRIANDO A FUNÇÃ
+
 }
