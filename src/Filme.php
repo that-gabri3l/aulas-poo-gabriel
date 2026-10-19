@@ -3,55 +3,55 @@
 
 class Filme
 {
-    // Propriedades: características
     private string $titulo;
     private string $genero;
     private int $ano;
-    
 
-    // Métodos: comportamentos (funções)
-    public function ehClassico():bool
+    /* Método CONSTRUTOR: a finalidade deste método
+    é receber dados (através de parâmetros) no momento da criação do objeto
+    e atribuí-los às propriedades. Este método NÃO POSSUI retorno. */
+    public function __construct(string $titulo, string $genero, int $ano)
     {
-        
-        return $this->ano < 2000;
-
+        // Atribuindo os valores recebidos pelos parâmetros às propriedades
+        $this->titulo = $titulo;
+        $this->genero = $genero;
+        $this->ano = $ano;
     }
 
-    /* Métodos getters: permitem ACESSO/LEITURA (ler dados) */
-    //Getters so retornam os dados de cada propriedade.
-    public function getTitulo():string
+    public function ehClassico(): bool
+    {
+        return $this->ano < 2000;
+    }
+
+    public function getTitulo(): string
     {
         return $this->titulo;
     }
 
-    public function getGenero():string
+    public function getGenero(): string
     {
         return $this->genero;
     }
 
-    public function getAno():int
+    public function getAno(): int
     {
         return $this->ano;
     }
-
-    /* Métodos setters: permitem ACESSO/ESCRITA (colocar dados) */
-    // Setters recebem atraves de parâmetros os dados a serem colocados nas propriedades.
-    public function setTitulo(string $titulo):void
+    
+    public function setTitulo(string $titulo): void
     {
         $this->titulo = $titulo;
     }
 
-    public function setGenero(string $genero):void
+    public function setGenero(string $genero): void
     {
         $this->genero = $genero;
     }
 
-    public function setAno(int $ano):void
+    public function setAno(int $ano): void
     {
-        //Podemos usar os setters para validações/verificações
-    
         if($ano > 0){
             $this->ano = $ano;
-            }
+        }
     }
 }
