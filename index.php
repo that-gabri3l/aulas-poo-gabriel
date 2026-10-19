@@ -2,23 +2,11 @@
 // Importando a classe
 require_once "src/Filme.php";
 
-// Criando um OBJETO ou uma INSTÂNCIA a partir da classe Filme
-$filme1 = new Filme();
+//Criando os objetos e passando os dados para o construtor
+$filme1 = new Filme('De volta para o Futuro', 'Ficçao', 1985);
+$filme2 = new Filme('Toy Story', 'Animação', 1995);
+$filme3 = new Filme('Homen Aranha', 'Ação', 2026);
 
-//Utilizando os setters para colocar dados em cada objet
-$filme1->setTitulo("De volta para o Futuro");
-$filme1->setAno(1984);
-$filme1->setGenero("Ficção Cientifica");
-
-$filme2 = new Filme();
-$filme2->setTitulo("Toy Story");
-$filme2->setAno(1995);
-$filme2->setGenero("Animação");
-
-$filme3 = new Filme();
-$filme3->setTitulo("O Auto da Compadecida");
-$filme3->setAno(2000);
-$filme3 ->setGenero("Comedia");
 
 //echo "<pre>";
 //var_dump($filme1, $filme2, $filme3);
@@ -65,7 +53,7 @@ $filmes =[$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                
+            
             </ul>
         </div>
 
