@@ -2,19 +2,18 @@
 // Importando a classe
 require_once "src/Filme.php";
 
-//Criando os objetos e passando os dados para o construtor
-$filme1 = new Filme('De volta para o Futuro', 'Ficçao', 1985);
+// Criando os objetos e passando os dados para o construtor
+$filme1 = new Filme('De Volta para o Futuro', 'Ficcão', 1985);
 $filme2 = new Filme('Toy Story', 'Animação', 1995);
-$filme3 = new Filme('Homen Aranha', 'Ação', 0);
+$filme3 = new Filme('Homem Aranha', 'Ação', 2026);
 
+$filme1->setTitulo('dsds');
 
+// echo "<pre>";
+// var_dump($filme1, $filme2, $filme3);
+// echo "</pre>";
 
-
-//echo "<pre>";
-//var_dump($filme1, $filme2, $filme3);
-//echo "</pre>";
-
-$filmes =[$filme1, $filme2, $filme3];
+$filmes = [$filme1, $filme2, $filme3];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,17 +35,18 @@ $filmes =[$filme1, $filme2, $filme3];
 
         <div class="filmes">
 
-            <?php foreach($filmes as $filme): ?>
+        <?php foreach($filmes as $filme): ?>
             <article class="card-filme">
-                <span class="genero"><?= $filme->getGenero() ?></span>
-                <h2><?= $filme->getTitulo() ?></h2>
-                <p class="ano">Lançamento: <?= $filme->getAno() ?></p>
+                <span class="genero"> <?= $filme->getGenero() ?> </span>
+                <h2> <?= $filme->getTitulo() ?> </h2>
+                <p class="ano">Lançamento: <?= $filme->getAno() ?> </p>
 
                 <?php if( $filme->ehClassico() ): ?>
                     <span class="classico">Clássico</span>
-                <?php endif ?>
+                <?php endif; ?>
+
             </article>
-            <?php endforeach ?>
+        <?php endforeach; ?>
 
         </div>
 
@@ -55,7 +55,7 @@ $filmes =[$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-            
+                
             </ul>
         </div>
 
