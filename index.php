@@ -1,6 +1,7 @@
 <?php 
 // Importando a superclasse/pai:Comteudo
 require_once "src/Conteudo.php";
+require_once "src/Serie.php";
 
 //Importando a subclasse/filha? FIlme (que herda de Conteudo)
 require_once "src/Filme.php";
@@ -10,9 +11,14 @@ $filme1 = new Filme('De Volta para o Futuro', 'Ficcão', 1985,115);
 $filme2 = new Filme('Toy Story', 'Animação', 1995,105);
 $filme3 = new Filme('Homem Aranha', 'Ação', 2026,145);
 
-echo "<pre>";
-var_dump($filme1, $filme2, $filme3);
-echo "</pre>";
+$serie1 = new Serie("Friends", "Comedia", 1992,24);
+$serie2 = new Serie("Supernatural","Suspense", 2005,20);
+
+$series = [$serie1, $serie2];
+
+//echo "<pre>";
+//var_dump($serie1);
+//echo "</pre>";
 
 $filmes = [$filme1, $filme2, $filme3];
 ?>
@@ -52,6 +58,21 @@ $filmes = [$filme1, $filme2, $filme3];
         </div>
 
         <hr>
+
+        <div class="series">
+            <?php foreach($series as $serie): ?>
+                <article class="card-serie">
+                    <span class="genero"> <?= $serie->getGenero() ?></span>
+                    <h2><?= $serie->getTitulo() ?></h2>
+                    <p class="ano">Lançamento: <?= $serie->getAno() ?></p>
+
+                    <?php if($serie->ehClassico()): ?>
+                        <span class="classico">Classico</span>
+                    <?php endif ?>
+
+                </article>
+            <?php endforeach; ?>
+        </div>
 
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
