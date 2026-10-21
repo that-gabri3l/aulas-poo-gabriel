@@ -80,6 +80,13 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
+                <li>Classe-pai (superclasse): <b>Conteudo</b></li>
+                <li>Classe-filha (subclasse): <b>Filme</b> e <b>Serie</b></li>
+                <li>Herança utilizando <b>extends</b></li>
+                <li>Herança com propriedades e métodos</li>
+                <li>Visibilidade <b>protected</b> na superclasse permitando o acesso atraves das subclasses.</li>
+                <li>construtor da superclasse atraves de <b>parent::__construct()</b></li>
+                <li>Propriedade especificas das subclasses</li>
                 
             </ul>
         </div>
