@@ -1,24 +1,24 @@
 <?php 
-// Importando a superclasse/pai:Comteudo
+// Importando a superclasse/pai: Conteudo
 require_once "src/Conteudo.php";
+
+// Importando as subclasses/filhas: Filme e Serie (que herda de Conteudo)
+require_once "src/Filme.php";
 require_once "src/Serie.php";
 
-//Importando a subclasse/filha? FIlme (que herda de Conteudo)
-require_once "src/Filme.php";
-
 // Criando os objetos e passando os dados para o construtor
-$filme1 = new Filme('De Volta para o Futuro', 'Ficcão', 1985,115);
-$filme2 = new Filme('Toy Story', 'Animação', 1995,105);
-$filme3 = new Filme('Homem Aranha', 'Ação', 2026,145);
+$filme1 = new Filme('De Volta para o Futuro', 'Ficcão', 1985, 116);
+$filme2 = new Filme('Toy Story', 'Animação', 1995, 105);
+$filme3 = new Filme('Homem Aranha', 'Ação', 2026, 145);
 
-$serie1 = new Serie("Friends", "Comedia", 1992,24);
-$serie2 = new Serie("Supernatural","Suspense", 2005,20);
+$serie1 = new Serie("Friends", "Comédia", 1992, 24);
+$serie2 = new Serie("Supernatural", "Suspense", 2005, 20);
 
 $series = [$serie1, $serie2];
 
-//echo "<pre>";
-//var_dump($serie1);
-//echo "</pre>";
+// echo "<pre>";
+// var_dump($serie1, $serie2);
+// echo "</pre>";
 
 $filmes = [$filme1, $filme2, $filme3];
 ?>
@@ -48,6 +48,8 @@ $filmes = [$filme1, $filme2, $filme3];
                 <h2> <?= $filme->getTitulo() ?> </h2>
                 <p class="ano">Lançamento: <?= $filme->getAno() ?> </p>
 
+                <p> <?= $filme->getDescricao() ?> </p>
+
                 <?php if( $filme->ehClassico() ): ?>
                     <span class="classico">Clássico</span>
                 <?php endif; ?>
@@ -62,14 +64,15 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="series">
             <?php foreach($series as $serie): ?>
                 <article class="card-serie">
-                    <span class="genero"> <?= $serie->getGenero() ?></span>
-                    <h2><?= $serie->getTitulo() ?></h2>
-                    <p class="ano">Lançamento: <?= $serie->getAno() ?></p>
+                    <span class="genero"> <?= $serie->getGenero() ?> </span>
+                    <h2> <?= $serie->getTitulo() ?> </h2>
+                    <p class="ano">Lançamento: <?= $serie->getAno() ?> </p>
+                    
+                    <p> <?= $serie->getDescricao() ?> </p>
 
                     <?php if($serie->ehClassico()): ?>
-                        <span class="classico">Classico</span>
-                    <?php endif ?>
-
+                        <span class="classico">Clássico</span>
+                    <?php endif; ?>
                 </article>
             <?php endforeach; ?>
         </div>

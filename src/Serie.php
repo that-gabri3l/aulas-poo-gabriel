@@ -29,7 +29,12 @@ class Serie extends Conteudo
     {
         $this->temporadas = $temporadas;
     }
-    
+
     // 4) (na index.php) Crie dois objetos do tipo Serie 
     // 5) (na index.php) Mostre estes dois objetos usando var_dump    
+
+    public function getDescricao(): string 
+    {
+        return "A série $this->titulo possui $this->temporadas temporadas.";
+    }
 }
