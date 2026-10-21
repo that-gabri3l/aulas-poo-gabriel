@@ -12,10 +12,10 @@ class Filme extends Conteudo
     public function __construct(string $titulo, string $genero, int $ano, int $duracao)
     {
         /*Chamamos o construtor da superclasse (classe pai) usando o parent::__construct(). Isso é necessario pois estes valores pertecem as propriedades da classe pai*/
-        return parent::__construct($titulo, $genero, $ano);
+        parent::__construct($titulo, $genero, $ano);
 
         //Ja quanto a duração, fazemos a atribuição aqui mesmo (afinal, $duração é de Filme)
-        $this->$duracao = $duracao;
+        $this->duracao = $duracao;
     }
 }
 
