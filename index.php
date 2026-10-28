@@ -1,5 +1,13 @@
 <?php 
+require_once "src/Notificador.php"; //interface
+require_once "src/NotificadorEmail.php"; //classe
+require_once "src/NotificadorSMS.php"; //classe
 
+//Criando os objetos a partir  das classes
+$notificadorPorEmail = new NotificadorEmail();
+$notificadorPorSMS = new NotificadorSMS();
+
+$notificadores = [$notificadorPorEmail, $notificadorPorSMS];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,18 +26,26 @@
             <h1>Notificações da loja virtual</h1>
             <p>Simulação de notificações sobre pedidos por e-mail e SMS</p>
         </header>
-
         <div class="conteudos">        
+            <?php $conteudoDaMensagem = "Seu pedido '123abc' foi confirmado!";
+            foreach($notificadores as $notificador): ?>
             <article class="card-conteudo">
         
             </article>
+            <?php endforeach; ?>
         </div>
 
         <hr>        
 
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
-            <ul></ul>
+            <ul>
+                <li>Interface <b>Notificador</b> como um contrato de comportamentos(metodos)</li>
+                <li>Definição do metodo <b>Enviar(string $mensagem): string </b> na Interface</li>
+                <li>Aplicação na interface com <b>implementes</b> nas classes <b>NotificadorEmail</b> e <b>NotificadorSMS</b></li>
+                <li>Implementação do metodo <b>enviar</b> em cada classe</li>
+                <li>polimorfismo: a mesma chamada a <b>enviar</b> utiliza a implementação de cada classe</li>
+            </ul>
         </div>
 
     </div>
