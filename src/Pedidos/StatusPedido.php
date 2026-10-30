@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Pedidos;
 
 //Cada case reposenta um status permitido e possuiu um valor/texti associado, que você pode escrever como quiser (acentod, espaços, cedilha)
 
