@@ -1,6 +1,8 @@
 <?php
 
-
+//Namespace princial/raiz:App (Pode ser qualquer nome)
+//Seguindo de \ e o nome do subnamespace (nome da pasta)
+namespace App\Notificacoes;
 
 interface Notificador
 {
