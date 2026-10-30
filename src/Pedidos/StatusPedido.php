@@ -10,5 +10,5 @@ enum StatusPedido: string
     case AguardandoPagamento = "Aguardando pagamento";
     case Pago = "Pago";
     case EmPreparacao = "Em preparação";
-    case SaiuParaEmtrega = "Saiu para entraga";
+    case SaiuParaEntrega = "Saiu para entraga";
 }
