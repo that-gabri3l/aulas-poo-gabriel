@@ -3,6 +3,7 @@
 use App\Pedidos\Pedido;
 use App\Relatorios\Pedido as RelatorioPedido;
 use App\Pedidos\StatusPedido;
+use App\Saudacao;
 
 // Atualizamos os caminhos físicos (pasta/arquivo.php)
 require_once "src/Relatorios/Pedido.php";
@@ -10,6 +11,7 @@ require_once "src/Pedidos/StatusPedido.php";
 require_once "src/Pedidos/Pedido.php"; 
 require_once "src/Notificacoes/Notificador.php"; 
 require_once "src/Notificacoes/NotificadorEmail.php"; 
+require_once "src/Saudacao.php";
 
 // Veja que nessa primeira forma, precisamos passar o nome completo da classe
 $notificadorPorEmail = new App\Notificacoes\NotificadorEmail();
@@ -24,6 +26,8 @@ $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
 
 $relatorioPedido1 = new RelatorioPedido();
 $relatorioPedido2 = new App\Relatorios\Pedido(); //tambem usando nome completo
+
+$saudacao = new Saudacao();
 
 
 ?>
@@ -43,6 +47,7 @@ $relatorioPedido2 = new App\Relatorios\Pedido(); //tambem usando nome completo
             <p class="destaque">Loja Virtual</p>
             <h1>Pedidos da loja virtual</h1>
             <p>Cada pedido possui um status: Pendente, Aguardando pagamento, Em preparação, Pago ou Saiu para entrega</p>
+            <p>Testando a saudação: <?= $saudacao->cumprimentar() ?></p>
         </header>
 
         <div class="conteudos">      
