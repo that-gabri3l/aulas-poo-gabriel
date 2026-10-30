@@ -1,9 +1,11 @@
 <?php 
 /* Nesta segunda forma, basta indicar o uso do recurso através do namespace */
 use App\Pedidos\Pedido;
+use App\Relatorios\Pedido as RelatorioPedido;
 use App\Pedidos\StatusPedido;
 
 // Atualizamos os caminhos físicos (pasta/arquivo.php)
+require_once "src/Relatorios/Pedido.php";
 require_once "src/Pedidos/StatusPedido.php"; 
 require_once "src/Pedidos/Pedido.php"; 
 require_once "src/Notificacoes/Notificador.php"; 
@@ -19,6 +21,11 @@ $pedido4 = new Pedido(1004, "Mônica Santos", StatusPedido::SaiuParaEntrega);
 
 $pedido3->setStatus(StatusPedido::Pago);
 $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
+
+$relatorioPedido1 = new RelatorioPedido();
+$relatorioPedido2 = new App\Relatorios\Pedido(); //tambem usando nome completo
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,7 +67,14 @@ $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                
+                <li>Reorganização dos arquivos em pastas dentro de <b>src</b></li>
+                <li>Declaração do namespace e do subnamespace em cada arquivo</li>
+                <li>Utilização do nome completo de um recurso: <b>App\Pedidos\Pedido</b></li>
+                <li>Importação do namespace <b>use</b> para utilizar nomes simples</li>
+                <li>Lembrete: 
+                    <b>use</b> importa namespace;
+                    <b>require_once</b> carrega arquivos
+                </li>
             </ul>
         </div>
 
